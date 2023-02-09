@@ -80,7 +80,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <a href="#" class="btn btn-default btn-flat">Profile</a>
-              <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+              <a href="<?=site_url('auth/logout')?>" class="btn btn-default btn-flat float-right">Sign out</a>
             </li>
           </ul>
         </li>
@@ -229,7 +229,7 @@
                 </li>
               </ul>
             </li>
-
+            <?php if($this->session->userdata('level') == 1) { ?>
             <li class="nav-header">SETTINGS</li>
             <li class="nav-item">
               <a href="../gallery.html" class="nav-link">
@@ -239,6 +239,7 @@
                 </p>
               </a>
             </li>
+            <?php } ?>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
