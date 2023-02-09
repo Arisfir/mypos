@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the database is not connected to automatically since no assumption
 | is made regarding whether you intend to use it.  This file lets
 | you globally define which systems you would like loaded with every
-| request.
+| request. edit
 |
 | -------------------------------------------------------------------
 | Instructions
@@ -39,7 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-$autoload['packages'] = array();
+$autoload['packages'] = array(); 
+
 
 /*
 | -------------------------------------------------------------------
