@@ -64,23 +64,23 @@
         <li class="nav-item dropdown user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
             <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
-            <span class="d-none d-md-inline">Alexander Pierce</span>
+            <span class="d-none d-md-inline"><?= $this->fungsi->user_login()->username ?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <!-- User image -->
             <li class="user-header bg-primary">
               <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-
               <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
+                <!-- cara sisipkan nama berdasarkan siapa yang login -->
+                <?= $this->fungsi->user_login()->name ?>
+                <small><?= $this->fungsi->user_login()->address ?> </small>
               </p>
             </li>
             <!-- Menu Body -->
             <!-- Menu Footer-->
             <li class="user-footer">
               <a href="#" class="btn btn-default btn-flat">Profile</a>
-              <a href="<?=site_url('auth/logout')?>" class="btn btn-default btn-flat float-right">Sign out</a>
+              <a href="<?= site_url('auth/logout') ?>" class="btn btn-default btn-flat float-right">Sign out</a>
             </li>
           </ul>
         </li>
@@ -103,7 +103,7 @@
             <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?= $this->fungsi->user_login()->username ?></a>
           </div>
         </div>
 
@@ -229,17 +229,19 @@
                 </li>
               </ul>
             </li>
-            <?php if($this->session->userdata('level') == 1) { ?>
-            <li class="nav-header">SETTINGS</li>
-            <li class="nav-item">
-              <a href="../gallery.html" class="nav-link">
-                <i class="nav-icon far fa-user"></i>
-                <p>
-                  Users
-                </p>
-              </a>
-            </li>
+            <!-- Jika level admin maka tampilkan menu users  -->
+            <?php if ($this->session->userdata('level') == 1) { ?>
+              <li class="nav-header">SETTINGS</li>
+              <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                  <i class="nav-icon far fa-user"></i>
+                  <p>
+                    Users
+                  </p>
+                </a>
+              </li>
             <?php } ?>
+            <!-- Jika level admin maka tampilkan menu users -->
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
