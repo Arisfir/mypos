@@ -65,6 +65,18 @@ class User extends CI_Controller
             }
             echo "<script>window.location='" . site_url('user') . "';</script>";
         }
+    }
 
+    public function del()
+    {
+        $id = $this->input->post('user_id');
+        $this->user_m->del($id);
+
+        if ($this->db->affected_rows() > 0) {
+            echo "<script>
+                alert('Data berhasil dihapus');
+            </script>";
+        }
+        echo "<script>window.location='" . site_url('user') . "';</script>";
     }
 }

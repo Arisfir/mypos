@@ -58,9 +58,12 @@
                                     <a href="<?= site_url('user/edit/' . $data->user_id) ?>" class="btn btn-primary btn-xs">
                                         <i class="fa fa-pen"></i> Update
                                     </a>
-                                    <a href="<?= site_url('user/del/' . $data->user_id) ?>" onclick="return confirm('Apakah Anda Yakin?')" class="btn btn-danger btn-xs">
-                                        <i class="fa fa-trash"></i> Delete
-                                    </a>
+                                    <form action="<?= site_url('user/del') ?>" method="post" class="d-inline">
+                                        <input type="hidden" name="user_id" value="<?= $data->user_id ?>">
+                                        <button onclick="return confirm('Apakah Anda Yakin?')" class="btn btn-danger btn-xs">
+                                            <i class="fa fa-trash"></i> Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php } ?>
