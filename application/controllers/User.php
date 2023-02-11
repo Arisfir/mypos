@@ -3,7 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends CI_Controller
 {
-
+    function __construct()
+    {
+        parent::__construct();
+        check_not_login();
+        $this->load->model('user_m');
+    }
     /**
      * Index Page for this controller.
      *
@@ -22,11 +27,7 @@ class User extends CI_Controller
 
     public function index()
     {
-        check_not_login();
-        $this->load->model('user_m');
-        
-        $data['row'] = $this->user_m->get();
-        
+        $data['row'] = $this->user_m->get(); 
         $this->template->load('template', 'user/user_data', $data);
         
     }
@@ -48,18 +49,21 @@ class User extends CI_Controller
         $this->form_validation->set_message('min_length', '{field} minimal 5 karakter');
         $this->form_validation->set_message('is_unique', '{field} ini sudah dipakai, silahkan ganti');
 
+        $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
+
 
 
         if ($this->form_validation->run() == FALSE) {
             $this->template->load('template', 'user/user_form_add');
         } else {
-            // $post = $this->input->post(null, TRUE);
-            // $this->user_m->add($post);
-            // if ($this->db->affected_rows() > 0) {
-            //     echo "<script>alert('Data berhasil disimpan');</script>";
-            // }
-            // echo "<script>window.location='" . site_url('user') . "';</script>";
-            echo "proses simpan data user baru";
+            $post = $this->input->post(null, TRUE);
+            $this->user_m->add($post);
+            if ($this->db->affected_rows() > 0) {
+                echo "<script>
+                    alert('Data berhasil disimpan');
+                </script>";
+            }
+            echo "<script>window.location='" . site_url('user') . "';</script>";
         }
 
     }

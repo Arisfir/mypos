@@ -35,35 +35,41 @@
         <div class="card-body">
             <div class="row justify-content-center">
                 <div class="col-md-4">
-                    <?php echo validation_errors(); ?>
+
                     <form action="" method="post">
                         <div class="form-group">
                             <label>Name *</label>
-                            <input type="text" name="fullname" value="<?=set_value('fullname')?> class="form-control" required>
+                            <input type="text" name="fullname" value="<?= set_value('fullname') ?>" class="form-control <?= form_error('fullname') ? 'is-invalid' : null ?>" required>
+                            <?= form_error('fullname', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Username *</label>
-                            <input type="text" name="username" class="form-control" required>
+                            <input type="text" name="username" value="<?= set_value('username') ?>" class="form-control <?= form_error('username') ? 'is-invalid' : null ?>" required>
+                            <?= form_error('username', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Password *</label>
-                            <input type="password" name="password" class="form-control" required>
+                            <input type="password" name="password" value="<?= set_value('password') ?>" class="form-control <?= form_error('password') ? 'is-invalid' : null ?>" required>
+                            <?= form_error('password', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Password Confirmantion *</label>
-                            <input type="password" name="passconf" class="form-control" required>
+                            <input type="password" name="passconf" value="<?= set_value('passconf') ?>" class="form-control" required>
+                            <?= form_error('passconf', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Address *</label>
-                            <input type="text" name="address" class="form-control" required>
+                            <textarea type="text" name="address" value="<?= set_value('address') ?>" class="form-control" required></textarea>
+                            <?= form_error('address', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Level *</label>
                             <select name="level" class="form-control" required>
                                 <option value="">- Pilih -</option>
-                                <option value="1">Admin</option>
-                                <option value="2">Kasir</option>
+                                <option value="1" <?= set_value('level') == 1 ? "selected" : null ?>>Admin</option>
+                                <option value="2" <?= set_value('level') == 2 ? "selected" : null ?>>Kasir</option>
                             </select>
+                            <?= form_error('level', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-sm">
