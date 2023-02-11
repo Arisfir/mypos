@@ -23,14 +23,25 @@ class User_m extends CI_Model {
     }
 
     public function add($post) {
-        $params = [
-            'name' => $post['fullname'],
-            'username' => $post['username'],
-            'password' => sha1($post['password']),
-            'address' => $post['address'],
-            'level' => $post['level']
-        ];
+        $params['name'] = $post['fullname'];
+        $params['username'] = $post['username'];
+        $params['password'] = sha1($post['password']);
+        $params['address'] = $post['address'];
+        $params['level'] = $post['level'];
         $this->db->insert('user', $params);
+    }
+
+    public function edit($post)
+    {
+        $params['name'] = $post['fullname'];
+        $params['username'] = $post['username'];
+        if(!empty($post['password'])) {
+            $params['password'] = sha1($post['password']);
+        }
+        $params['address'] = $post['address'];
+        $params['level'] = $post['level'];
+        $this->db->where('user_id', $post['user_id']);
+        $this->db->update('user', $params);
     }
     
     public function del($id)
