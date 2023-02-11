@@ -230,7 +230,7 @@
               </ul>
             </li>
             <!-- Jika level admin maka tampilkan menu users  -->
-            <?php if ($this->session->userdata('level') == 1) { ?>
+            <?php if($this->fungsi->user_login()->level == 1) { ?>
               <li class="nav-header">SETTINGS</li>
               <li class="nav-item">
                 <a href="<?= site_url('user') ?>" class="nav-link">
