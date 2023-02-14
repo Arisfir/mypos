@@ -19,8 +19,29 @@ class Supplier extends CI_Controller {
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 
+
+	function __construct()
+	{
+		parent::__construct();
+		check_not_login();
+		$this->load->model('supplier_m');
+	}
+	
 	public function index()
 	{
-		$this->template->load('template', 'supplier/supplier_data');
+		$data['row'] = $this->supplier_m->get();
+		$this->template->load('template', 'supplier/supplier_data', $data);
+	}
+
+	public function del($id)
+	{
+		$this->supplier_m->del($id);
+		if ($this->db->affected_rows() > 0) {
+			echo "<script>alert('Data berhasil dihapus');</script>";
+		}
+		echo "<script>window.location='".site_url('supplier')."';</script>";
+			// 	$this->session->set_flashdata('success', 'Data berhasil dihapus');
+		// }
+		// redirect('supplier');
 	}
 }
