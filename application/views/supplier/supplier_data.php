@@ -26,7 +26,7 @@
         </div>
         <div class="card-header">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="<?= site_url('user/add') ?>" class="btn btn-primary btn-sm me-md-2">
+                <a href="<?= site_url('supplier/add') ?>" class="btn btn-primary btn-sm me-md-2">
                     <i class="fa fa-plus"></i> Create
                 </a>
             </div>
