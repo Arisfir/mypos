@@ -141,7 +141,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="<?= site_url('customer') ?>" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Customers
@@ -230,7 +230,7 @@
               </ul>
             </li>
             <!-- Jika level admin maka tampilkan menu users  -->
-            <?php if($this->fungsi->user_login()->level == 1) { ?>
+            <?php if ($this->fungsi->user_login()->level == 1) { ?>
               <li class="nav-header">SETTINGS</li>
               <li class="nav-item">
                 <a href="<?= site_url('user') ?>" class="nav-link">
