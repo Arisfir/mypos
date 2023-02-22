@@ -20,6 +20,7 @@
 <!-- Main content -->
 <section class="content">
     <!-- /.card -->
+    <?php $this->view('messages') ?>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><b>Data Categories</b></h3>
@@ -39,6 +40,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +49,7 @@
                             <tr>
                                 <td style="width:5%;"><?= $no++ ?></td>
                                 <td><?= $data->name ?></td>
-                                <td>
+                                <td style="width:15%;">
                                     <a href="<?= site_url('category/edit/' . $data->category_id) ?>" class="btn btn-primary btn-xs">
                                         <i class="fa fa-pen"></i> Update
                                     </a>

@@ -18,7 +18,7 @@
   <!-- Site wrapper -->
   <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-orange navbar-light">
       <!-- Left navbar links -->
       <!-- Hamburger Button -->
       <ul class="navbar-nav">
@@ -89,7 +89,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #181818;">
       <!-- Brand Logo -->
       <a href="<?= site_url('dashboard') ?>" class="brand-link">
         <span class="logo-lg">My<b>POS</b></span>
@@ -102,7 +102,7 @@
           <div class="image">
             <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
-          <div class="info">
+          <div class="info" style="color: white;">
             <a href="#" class="d-block"><?= $this->fungsi->user_login()->username ?></a>
           </div>
         </div>

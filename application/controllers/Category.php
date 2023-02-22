@@ -38,12 +38,9 @@ class category extends CI_Controller
     {
         $this->category_m->del($id);
         if ($this->db->affected_rows() > 0) {
-            echo "<script>alert('Data berhasil dihapus');</script>";
+            $this->session->set_flashdata('success', 'Data berhasil dihapus');
         }
-        echo "<script>window.location='" . site_url('category') . "';</script>";
-        // 	$this->session->set_flashdata('success', 'Data berhasil dihapus');
-        // }
-        // redirect('category');
+        redirect('category');
     }
 
     public function add()
@@ -84,8 +81,8 @@ class category extends CI_Controller
         }
 
         if ($this->db->affected_rows() > 0) {
-            echo "<script>alert('Data berhasil disimpan');</script>";
+            $this->session->set_flashdata('success', 'Data berhasil disimpan');
         }
-        echo "<script>window.location='" . site_url('category') . "';</script>";
+        redirect('category');
     }
 }
