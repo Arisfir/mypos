@@ -158,19 +158,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="../charts/chartjs.html" class="nav-link">
+                  <a href="<?= site_url('category') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Categories</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../charts/flot.html" class="nav-link">
+                  <a href="<?= site_url('unit') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Units</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../charts/inline.html" class="nav-link">
+                  <a href="<?= site_url('item') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Item</p>
                   </a>
