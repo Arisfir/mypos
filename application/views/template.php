@@ -176,9 +176,9 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= site_url('item') ?>" class="nav-link">
+                  <a href="<?= site_url('item') ?>" <?= $this->uri->segment(1) == 'item' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Item</p>
+                    <p>Items</p>
                   </a>
                 </li>
               </ul>
