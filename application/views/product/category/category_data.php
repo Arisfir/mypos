@@ -35,7 +35,7 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="box-body table-responsive">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" id="tableaf">
                     <thead>
                         <tr>
                             <th>No</th>
