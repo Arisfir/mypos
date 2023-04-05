@@ -126,11 +126,12 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
             <!-- Add icons to the links using the .nav-icon class
                   with font-awesome or any other icon font library -->
+            <li class="nav-header"><b>MAIN NAVIGATION</b></li>
             <li class="nav-item">
-              <a href="<?= site_url('dashboard') ?>" class="nav-link">
+              <a href="<?= site_url('dashboard') ?>" <?= $this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -138,7 +139,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= site_url('supplier') ?>" class="nav-link">
+              <a href="<?= site_url('supplier') ?>" <?= $this->uri->segment(1) == 'supplier' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                 <i class="nav-icon fas fa-solid fa-truck"></i>
                 <p>
                   Suppliers
@@ -146,7 +147,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= site_url('customer') ?>" class="nav-link">
+              <a href="<?= site_url('customer') ?>" <?= $this->uri->segment(1) == 'customer' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Customers
@@ -161,15 +162,15 @@
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview ">
                 <li class="nav-item">
-                  <a href="<?= site_url('category') ?>" class="nav-link">
+                  <a href="<?= site_url('category') ?>" <?= $this->uri->segment(1) == 'category' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                     <i class="far fa-circle nav-icon"></i>
                     <p>Categories</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= site_url('unit') ?>" class="nav-link">
+                  <a href="<?= site_url('unit') ?>" <?= $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                     <i class="far fa-circle nav-icon"></i>
                     <p>Units</p>
                   </a>
@@ -236,7 +237,7 @@
             </li>
             <!-- Jika level admin maka tampilkan menu users  -->
             <?php if ($this->fungsi->user_login()->level == 1) { ?>
-              <li class="nav-header">SETTINGS</li>
+              <li class="nav-header"><b>SETTINGS</b></li>
               <li class="nav-item">
                 <a href="<?= site_url('user') ?>" class="nav-link">
                   <i class="nav-icon far fa-user"></i>
@@ -304,9 +305,9 @@
   <script src="<?= base_url() ?>assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url() ?>assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <script>
-  $(document).ready(function() {
-    $('#tableaf').DataTable()
-  })
+    $(document).ready(function() {
+      $('#tableaf').DataTable()
+    })
   </script>
 </body>
 
