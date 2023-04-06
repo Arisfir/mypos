@@ -39,6 +39,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Barcode</th>
                             <th>Name</th>
                             <th>Actions</th>
                         </tr>
@@ -48,6 +49,7 @@
                         foreach ($row->result() as $key => $data) { ?>
                             <tr>
                                 <td style="width:5%;"><?= $no++ ?></td>
+                                <td><?= $data->barcode ?></td>
                                 <td><?= $data->name ?></td>
                                 <td style="width:15%;">
                                     <a href="<?= site_url('item/edit/' . $data->item_id) ?>" class="btn btn-primary btn-xs">
