@@ -29,7 +29,11 @@ class item_m extends CI_Model
     public function edit($post)
     {
         $params = [
-            'name' => $post['item_name'],
+            'barcode' => $post['barcode'],
+            'name' => $post['product_name'],
+            'category_id' => $post['category'],
+            'unit_id' => $post['unit'],
+            'price' => $post['price'],
             'updated' => date('Y-m-d H:i:s')
         ];
         $this->db->where('item_id', $post['id']);
