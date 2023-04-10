@@ -36,8 +36,7 @@
         <div class="card-body">
             <div class="row justify-content-center">
                 <div class="col-md-4">
-
-                    <form action="<?= site_url('item/process') ?>" method="post">
+                    <?php echo form_open_multipart('item/process') ?>
                         <div class="form-group">
                             <label for="barcode">Barcode *</label>
                             <input type="hidden" name="id" value="<?= $row->item_id ?>">
@@ -48,29 +47,37 @@
                             <input type="text" name="product_name" id="product_name" value="<?= $row->name ?>" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label >Category *</label>
+                            <label>Category *</label>
                             <select name="category" id="category" class="form-control" required>
                                 <option value="">- Pilih -</option>
-                                <?php foreach($category->result() as $key => $data) { ?>
-                                <option value="<?= $data->category_id ?>" <?=$data->category_id == $row->category_id ? "selected" : null?>><?= $data->name ?></option>
+                                <?php foreach ($category->result() as $key => $data) { ?>
+                                    <option value="<?= $data->category_id ?>" <?= $data->category_id == $row->category_id ? "selected" : null ?>><?= $data->name ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label >Unit *</label>
-                            <?php echo form_dropdown('unit', $unit, $selectedunit,
-                                ['class'=>'form-control', 'required'=> 'required']) ?>
-                        <div class="form-group">
-                            <label for="price">Price *</label>
-                            <input type="text" name="price" id="price" value="<?= $row->price ?>" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" name="<?= $page ?>" class="btn btn-success btn-sm">
-                                <i class="fa fa-paper-plane"></i> Save</button>
-                            <button type="reset" class="btn btn-secondary btn-sm">
-                                Reset </button>
-                        </div>
-                    </form>
+                            <label>Unit *</label>
+                            <?php echo form_dropdown(
+                                'unit',
+                                $unit,
+                                $selectedunit,
+                                ['class' => 'form-control', 'required' => 'required']
+                            ) ?>
+                            <div class="form-group">
+                                <label for="price">Price *</label>
+                                <input type="text" name="price" id="price" value="<?= $row->price ?>" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Image *</label>
+                                <input type="file" name="image" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="<?= $page ?>" class="btn btn-success btn-sm">
+                                    <i class="fa fa-paper-plane"></i> Save</button>
+                                <button type="reset" class="btn btn-secondary btn-sm">
+                                    Reset </button>
+                            </div>
+                    <?php echo form_close() ?>
                 </div>
             </div>
         </div>
