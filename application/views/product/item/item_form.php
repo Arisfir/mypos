@@ -20,6 +20,7 @@
 <!-- Main content -->
 <section class="content">
     <!-- /.card -->
+    <?php $this->view('messages') ?>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><b><?= ucfirst($page) ?> item</b></h3>
