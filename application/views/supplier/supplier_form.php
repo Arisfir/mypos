@@ -22,9 +22,7 @@
     <!-- /.card -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title"><b><?=ucfirst($page)?> Supplier</b></h3>
-        </div>
-        <div class="card-header">
+            <h3 class="card-title"><b><?= ucfirst($page) ?> Supplier</b></h3>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="<?= site_url('supplier') ?>" class="btn btn-warning btn-sm me-md-2">
                     <i class="fa fa-undo"></i> Back
@@ -55,7 +53,7 @@
                             <input type="text" name="desc" value="<?= $row->description ?>" class="form-control">
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="<?=$page?>" class="btn btn-success btn-sm">
+                            <button type="submit" name="<?= $page ?>" class="btn btn-success btn-sm">
                                 <i class="fa fa-paper-plane"></i> Save</button>
                             <button type="reset" class="btn btn-secondary btn-sm">
                                 Reset </button>

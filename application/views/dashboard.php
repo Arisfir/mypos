@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="card-body">
-              Start creating your amazing application!
+              <h1>Start creating your amazing application!</h1>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

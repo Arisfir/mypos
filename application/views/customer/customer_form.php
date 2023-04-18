@@ -23,8 +23,6 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><b><?= ucfirst($page) ?> Customer</b></h3>
-        </div>
-        <div class="card-header">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="<?= site_url('customer') ?>" class="btn btn-warning btn-sm me-md-2">
                     <i class="fa fa-undo"></i> Back
