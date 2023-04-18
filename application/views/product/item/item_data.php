@@ -54,15 +54,19 @@
                         foreach ($row->result() as $key => $data) { ?>
                             <tr>
                                 <td style="width:5%;"><?= $no++ ?></td>
-                                <td><?= $data->barcode ?></td>
+                                <td><?= $data->barcode ?><br>
+                                    <a href="<?= site_url('item/barcode_qrcode/' . $data->item_id) ?>" class="btn btn-secondary btn-xs">
+                                        <i class="fa fa-barcode"></i> Generate
+                                    </a>
+                                </td>
                                 <td><?= $data->name ?></td>
                                 <td><?= $data->category_name ?></td>
                                 <td><?= $data->unit_name ?></td>
                                 <td><?= $data->price ?></td>
                                 <td><?= $data->stock ?></td>
                                 <td>
-                                    <?php if($data->image != null) { ?>
-                                        <img src="<?=base_url('uploads/product/'.$data->image)?>" style="width:100px">
+                                    <?php if ($data->image != null) { ?>
+                                        <img src="<?= base_url('uploads/product/' . $data->image) ?>" style="width:100px">
                                     <?php } ?>
                                 </td>
                                 <td style="width:15%;">
