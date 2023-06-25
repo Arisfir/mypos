@@ -35,10 +35,14 @@
                 <div class="col-md-4">
                     <?php
                     $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
-                    echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($row->barcode, $generator::TYPE_CODE_128)) . '">';
+                    echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($row->barcode, $generator::TYPE_CODE_128)) . '" style="width:200px">';
                     ?>
                     <br>
                     <?= $row->barcode ?>
+                    <br><br>
+                    <a href="<?= site_url('item/barcode_print/' . $row->item_id) ?>" target="_blank" class="btn btn-primary btn-sm ">
+                        <i class="fa fa-print"></i> Print
+                    </a>
                 </div>
             </div>
         </div>
@@ -89,7 +93,7 @@
                     <br>
                     <?= $row->barcode ?>
                     <br><br>
-                    <a href="<?= site_url('item/qrcode_print/' . $row->item_id) ?>" target="_blank" class="btn btn-default btn-sm">
+                    <a href="<?= site_url('item/qrcode_print/' . $row->item_id) ?>" target="_blank" class="btn btn-primary btn-sm ">
                         <i class="fa fa-print"></i> Print
                     </a>
                 </div>
